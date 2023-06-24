@@ -3,14 +3,15 @@ interface Props {
   title: string;
 }
 
-const { title } = Astro.props;
+import {siteConfig} from '../config'
+const { description , title } = siteConfig;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
@@ -21,8 +22,68 @@ const { title } = Astro.props;
   </body>
 </html>
 <style is:global>
-  html {
-    font-family: -apple-system, system-ui, sans-serif;
-    background-color: #f6f6f6;
+  /* arabic */
+  @font-face {
+    font-family: "Arabic";
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url("/fonts/NotoKufiArabic-Light.ttf");
   }
+  /* arabic */
+  @font-face {
+    font-family: "Arabic";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/NotoKufiArabic-Regular.ttf");
+  }
+  /* arabic */
+  @font-face {
+    font-family: "Arabic";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("/fonts/NotoKufiArabic-SemiBold.ttf");
+  }
+
+  body{
+    font-family: Arabic ,sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
+    -webkit-font-smoothing : antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-wrap: break-word;
+}
+
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-gray-400;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 </style>

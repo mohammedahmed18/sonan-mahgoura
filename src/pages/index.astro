@@ -1,9 +1,42 @@
 ---
+import { siteConfig } from "../config";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>
-    <h1 class="text-red-200">Hello world</h1>
-  </main>
+  <main dir="rtl">
+    <div class="min-h-screen flex flex-col relative items-center">
+      <div class="z-20 bg-black/60 text-white backdrop-blur-sm px-5 py-10 rounded-2xl mx-5 max-w-3xl my-5 flex-grow flex justify-center items-center flex-col">
+        <h1 class="text-3xl text-center">السنن المهجورة</h1>
+        <p class="my-7 leading-[2.3] text-lg">
+          {
+            `في ظل التطاول الذي يحدث علي أشرف الخلق نبينا محمد 
+          ونحن - للاسف الشديد - مقصرين ليس فقط في الدفاع علي نبينا عليه الصلاة والسلام ولكن في اتباع سنته أيضا . 
+          لذلك قررنا نعمل جروب نحيي فيه السنن المهجورة عن النبي  . 
+          ليكون نصره له ولسنته و لكي ننال دعوة رسول الله صلى الله عليه وسلم في حديثه`
+          }
+          <span class="font-bold text-orange-500">
+            {
+              `" نضَّرَ اللَّهُ امرأً سمِعَ مقالتي ، فبلَّغَها ، فرُبَّ حاملِ فِقهٍ ، غيرُ فَقيهٍ ، وربَّ حاملِ فِقهٍ إلى من هوَ أفقَهُ منهُ "`
+            }
+          </span>
+          {`إن شاء الله سيتم إرسال `}
+          <span class="text-orange-300">{`سنه واحدة`}</span>
+          {` عن النبي  `}
+          <span class="text-orange-300">{`كل يوم`}</span>
+          {
+            `في موضوع معين  وليكن مثلا سنن مهجورة في صفه الوضوء  .
+          وسنة واحدة طوال الشهر نحاول أن  ننتظم عليها .`
+          }
+        </p>
+  
+        <a class="font-bold flex items-center gap-3 bg-orange-600 rounded-lg px-7 py-3 shadow-lg hover:bg-orange-500 transition-colors duration-300 active:bg-orange-400" href="https://chat.whatsapp.com/CQ8RXh9IwON5FJxZXbD2Na">
+          الانضمام الى المجموعة
+          <img class="w-10 h-10" src="/whatsapp-icon.svg" />
+        </a>
+      </div>
+  
+      <img src="/bg.jpg" class="z-10 absolute inset-0 w-full h-full object-cover" loading="lazy" />
+    </div>
+  
 </Layout>
